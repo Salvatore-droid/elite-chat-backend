@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'daphne',  
     'django.contrib.admin',
     'django.contrib.auth',
@@ -159,7 +160,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/chat/'
 LOGOUT_REDIRECT_URL = '/login/'
 
- Jazzmin settings
+ 
 JAZZMIN_SETTINGS = {
     # Title on the admin index page
     "site_title": "EliteChat Admin",

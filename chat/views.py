@@ -37,7 +37,8 @@ class RegisterView(APIView):
                 email=email,
                 password=password
             )
-            Profile.objects.create(user=user)  # Create default profile
+            Profile.objects.create(user=user)
+            login(request, user)  # Create session for immediate login
             return Response(
                 {
                     'id': user.id,

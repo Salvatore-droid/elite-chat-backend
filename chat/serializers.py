@@ -1,23 +1,23 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from .models import Message, Profile
+from .models import Profile, Message
 
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
-        fields = ['profile_picture', 'status', 'last_updated']
+        fields = ['profile_picture', 'status']
 
 class UserSerializer(serializers.ModelSerializer):
-    profile = ProfileSerializer(read_only=True)
+    profile = ProfileSerializer()
 
     class Meta:
         model = User
         fields = ['id', 'username', 'email', 'profile']
 
 class MessageSerializer(serializers.ModelSerializer):
-    sender = UserSerializer(read_only=True)
-    recipient = UserSerializer(read_only=True)
+    sender = UserSerializer()
+    recipient = UserSerializer()
 
     class Meta:
         model = Message
-        fields = ['id', 'sender', 'recipient', 'content', 'timestamp']
+        fields = ['id', 'sender', 'recipient', 'content', 'timestamp', 'read']
