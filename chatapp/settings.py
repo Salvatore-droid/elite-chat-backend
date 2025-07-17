@@ -158,3 +158,82 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/chat/'
 LOGOUT_REDIRECT_URL = '/login/'
+
+ Jazzmin settings
+JAZZMIN_SETTINGS = {
+    # Title on the admin index page
+    "site_title": "EliteChat Admin",
+    "site_header": "EliteChat",
+    "site_brand": "EliteChat Admin",
+    "site_logo": None,  # Add path to logo if desired (e.g., "images/logo.png")
+    "login_logo": None,
+    "site_icon": None,
+    # Welcome message
+    "welcome_sign": "Welcome to EliteChat Admin Panel",
+    # Copyright notice
+    "copyright": "EliteChat 2025",
+    # UI Customizations
+    "topmenu_links": [
+        {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"name": "View Site", "url": "https://elite-chat-backend.onrender.com", "new_window": True},
+    ],
+    "usermenu_links": [
+        {"name": "Profile", "url": "/api/profile/", "new_window": True},
+        {"model": "auth.user"},
+    ],
+    "show_ui_builder": True,  # Enable UI customizer
+    "navigation_expanded": True,
+    "hide_apps": [],  # Apps to hide from sidebar
+    "hide_models": [],  # Models to hide
+    "order_with_respect_to": ["auth", "chat"],
+    "custom_css": None,
+    "custom_js": None,
+    # Theme settings
+    "theme": "darkly",  # Dark theme for modern look
+    "dark_mode_theme": "darkly",
+    # Custom icons for models
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "auth.Group": "fas fa-users",
+        "chat.Profile": "fas fa-user-circle",
+        "chat.Message": "fas fa-comments",
+    },
+    # Related modal settings
+    "related_modal_active": True,
+    # UI tweaks
+    "changeform_format": "horizontal_tabs",
+    "language_chooser": False,
+}
+
+JAZZMIN_UI_TWEAKS = {
+    "navbar_small_text": False,
+    "footer_small_text": False,
+    "body_small_text": True,
+    "brand_small_text": False,
+    "brand_colour": "navbar-dark",
+    "accent": "accent-primary",
+    "navbar": "navbar-dark",
+    "no_navbar_border": False,
+    "navbar_fixed": True,
+    "layout_boxed": False,
+    "footer_fixed": False,
+    "sidebar_fixed": True,
+    "sidebar": "sidebar-dark-primary",
+    "sidebar_nav_small_text": False,
+    "sidebar_disable_expand": False,
+    "sidebar_nav_child_indent": True,
+    "sidebar_nav_compact_style": True,
+    "sidebar_nav_legacy_style": False,
+    "sidebar_nav_flat_style": False,
+    "theme": "darkly",
+    "dark_mode_theme": "darkly",
+    "button_classes": {
+        "primary": "btn-primary",
+        "secondary": "btn-secondary",
+        "info": "btn-info",
+        "warning": "btn-warning",
+        "danger": "btn-danger",
+        "success": "btn-success"
+    }
+}
